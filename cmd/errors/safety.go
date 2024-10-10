@@ -31,3 +31,11 @@ func (se *SafetyError) Code() int {
 func (se *SafetyError) Command() string {
 	return se.command
 }
+
+func NewSafetyError(message string, code int, command string) IntSafetyErr {
+	return &SafetyError {
+		message: message,
+		code: code,
+		command: command,
+	}
+}
