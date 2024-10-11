@@ -63,3 +63,7 @@ func NewSafetyError(message string, code uint8) IntSafetyErr {
 		code: code,
 	}
 }
+
+func GenerateErrorCode(command Command, cause ErrorCause) uint8 {
+	return uint8(command) | uint8(cause)
+}
